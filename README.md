@@ -106,7 +106,7 @@ For going beyond `import` and building things yourself.
 
 
 ```python
-
+"""
 THE 5 PHASES (unchanged in spirit):
   1. Orient  2. Split(+CV)  3. Bake-off  4. Diagnose  5. Finalize
 ============================================================================
