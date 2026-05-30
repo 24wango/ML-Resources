@@ -107,27 +107,6 @@ For going beyond `import` and building things yourself.
 
 ```python
 
-"""
-============================================================================
-QUANT DATA-ANALYSIS INTERVIEW — SMALL-DATA REGRESSION WORKFLOW (N ~= 500)
-============================================================================
-Same task as the standard workflow (5 features x_0..x_4 + continuous y),
-but with only ~500 total rows. The ANALYSIS is identical; the PRIORITIES
-shift. With little data your main risk is no longer "missing the signal" —
-it's FOOLING YOURSELF: overfitting, and trusting a noisy score.
-
-WHAT CHANGES vs the large-data workflow:
-  1. SPLIT: a 20% holdout is only ~100 rows (noisy). Lean on cross-validation
-     as the real estimate. Use MORE folds (cv=10) so each fold trains on more
-     data and the mean score is more stable.
-  2. REGULARIZATION MATTERS MORE: Ridge/Lasso shine when data is scarce. Plain
-     OLS and complex models overfit faster.
-  3. WATCH COMPLEX MODELS: RF/GBM and high-degree polynomials overfit small
-     data. Always compare TRAIN score vs CV score — a big gap = overfitting.
-     Keep degree=2 (degree=3 on 5 feats = 55 columns, too many for 500 rows).
-  4. OUTLIERS HAVE MORE LEVERAGE: one extreme point sways the fit more when
-     there are few points. Look harder, and state your decision.
-
 THE 5 PHASES (unchanged in spirit):
   1. Orient  2. Split(+CV)  3. Bake-off  4. Diagnose  5. Finalize
 ============================================================================
